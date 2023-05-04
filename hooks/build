@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker build --build-arg MAPPROXY_VERSION=$MAPPROXY_VERSION \
+             -f $DOCKERFILE_PATH -t $IMAGE_NAME .
