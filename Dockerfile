@@ -1,6 +1,7 @@
 #--------- Generic stuff all our Dockerfiles should start with so we get caching ------------
 FROM python:3.9
-MAINTAINER Tim Sutton<tim@kartoza.com>
+
+LABEL maintainer="PlanolPort<planolport@portdebarcelona.cat>"
 
 #-------------Application Specific Stuff ----------------------------------------------------
 ARG MAPPROXY_VERSION=''
@@ -13,7 +14,7 @@ RUN apt-get -y update && \
     python3-lxml \
     libgdal-dev \
     build-essential \
-    python-dev \
+    python3-dev \
     libjpeg-dev \
     zlib1g-dev \
     libfreetype6-dev \
@@ -36,6 +37,8 @@ EXPOSE 8080
 ADD build_data/uwsgi.ini /settings/uwsgi.default.ini
 ADD build_data/multi_mapproxy.py /multi_mapproxy.py
 ADD scripts /scripts
+
+RUN sed -i 's/\r$//' /scripts/*.sh 
 RUN chmod +x /scripts/*.sh
 
 RUN echo 'figlet -t "Kartoza Docker MapProxy"' >> ~/.bashrc
