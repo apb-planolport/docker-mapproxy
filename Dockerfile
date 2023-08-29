@@ -28,6 +28,7 @@ RUN pip3 --disable-pip-version-check install Shapely Pillow MapProxy${MAPPROXY_V
 
 RUN ln -s /usr/lib/libgdal.a /usr/lib/liblibgdal.a
 
+
 # Cleanup resources
 RUN apt-get -y --purge autoremove  \
     && apt-get clean \
@@ -37,6 +38,9 @@ EXPOSE 8080
 ADD build_data/uwsgi.ini /settings/uwsgi.default.ini
 ADD build_data/multi_mapproxy.py /multi_mapproxy.py
 ADD scripts /scripts
+
+#Copy customized templates
+COPY templates/ /usr/local/lib/python3.9/site-packages/mapproxy/service/templates/
 
 RUN sed -i 's/\r$//' /scripts/*.sh 
 RUN chmod +x /scripts/*.sh
