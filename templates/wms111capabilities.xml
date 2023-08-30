@@ -54,7 +54,7 @@
       <Format>application/vnd.ogc.wms_xml</Format>
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.online_resource}}?"/></Get>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.url}}?"/></Get>
         </HTTP>
       </DCPType>
     </GetCapabilities>
@@ -64,7 +64,7 @@
 {{endfor}}
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.online_resource}}?"/></Get>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.url}}?"/></Get>
         </HTTP>
       </DCPType>
     </GetMap>
@@ -74,7 +74,7 @@
 {{endfor}}
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.online_resource}}?"/></Get>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.url}}?"/></Get>
         </HTTP>
       </DCPType>
     </GetFeatureInfo>
@@ -85,7 +85,7 @@
 {{endfor}}
         <DCPType>
             <HTTP>
-                <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.online_resource}}?"/></Get>
+                <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.url}}?"/></Get>
             </HTTP>
         </DCPType>
     </GetLegendGraphic>
@@ -163,7 +163,7 @@
         <Title>default</Title>
         <LegendURL width="{{layer.legend_size[0]}}" height="{{layer.legend_size[1]}}">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="{{service.online_resource}}{{layer.legend_url|escape}}"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="{{service.url}}{{layer.legend_url|escape}}"/>
         </LegendURL>
     </Style>
     {{endif}}

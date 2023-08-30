@@ -25,7 +25,7 @@
       </Format>
       <DCPType>
         <HTTP>
-          <Get onlineResource="{{service.online_resource}}?"/>
+          <Get onlineResource="{{service.url}}?"/>
         </HTTP>
       </DCPType>
     </Capabilities>
@@ -39,7 +39,7 @@
       </Format>
       <DCPType>
         <HTTP>
-          <Get onlineResource="{{service.online_resource}}?"/>
+          <Get onlineResource="{{service.url}}?"/>
         </HTTP>
       </DCPType>
     </Map>
@@ -53,7 +53,7 @@
       </Format>
       <DCPType>
         <HTTP>
-          <Get onlineResource="{{service.online_resource}}?"/>
+          <Get onlineResource="{{service.url}}?"/>
         </HTTP>
       </DCPType>
     </FeatureInfo>
@@ -93,7 +93,7 @@
     <Style>
       <Name>default</Name>
       <Title>default</Title>
-      <StyleURL>{{service.online_resource}}{{layer.legend_url|escape}}</StyleURL>
+      <StyleURL>{{service.url}}{{layer.legend_url|escape}}</StyleURL>
     </Style>
 {{endif}}
     {{if layer.res_range}}

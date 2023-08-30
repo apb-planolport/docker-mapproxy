@@ -47,7 +47,7 @@
     <ows:Operation name="GetCapabilities">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:href="{{service.online_resource}}?">
+          <ows:Get xlink:href="{{service.url}}?">
             <ows:Constraint name="GetEncoding">
               <ows:AllowedValues>
                 <ows:Value>KVP</ows:Value>
@@ -60,7 +60,7 @@
     <ows:Operation name="GetTile">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:href="{{service.online_resource}}?">
+          <ows:Get xlink:href="{{service.url}}?">
             <ows:Constraint name="GetEncoding">
               <ows:AllowedValues>
                 <ows:Value>KVP</ows:Value>
@@ -73,7 +73,7 @@
     <ows:Operation name="GetFeatureInfo">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:href="{{service.online_resource}}?">
+          <ows:Get xlink:href="{{service.url}}?">
             <ows:Constraint name="GetEncoding">
               <ows:AllowedValues>
                 <ows:Value>KVP</ows:Value>
@@ -150,6 +150,6 @@
 {{endfor}}
   </Contents>
 {{if restful}}
-  <ServiceMetadataURL xlink:href="{{service.online_resource}}/1.0.0/WMTSCapabilities.xml"/>
+  <ServiceMetadataURL xlink:href="{{service.url}}/1.0.0/WMTSCapabilities.xml"/>
 {{endif}}
 </Capabilities>
