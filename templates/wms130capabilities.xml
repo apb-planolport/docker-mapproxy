@@ -53,7 +53,7 @@
       <Format>text/xml</Format>
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xlink:href="{{service.url}}?"/></Get>
+          <Get><OnlineResource xlink:href="{{service.online_resource}}?"/></Get>
         </HTTP>
       </DCPType>
     </GetCapabilities>
@@ -73,7 +73,7 @@
 {{endfor}}
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xlink:href="{{service.url}}?"/></Get>
+          <Get><OnlineResource xlink:href="http://hola"/></Get>
         </HTTP>
       </DCPType>
     </GetFeatureInfo>
