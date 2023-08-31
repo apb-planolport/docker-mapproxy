@@ -40,7 +40,7 @@ ADD build_data/multi_mapproxy.py /multi_mapproxy.py
 ADD scripts /scripts
 
 # Copy customized templates
-COPY templates/*.xml /usr/local/lib/python3.9/site-packages/mapproxy/service/templates/
+# COPY templates/*.xml /usr/local/lib/python3.9/site-packages/mapproxy/service/templates/
 
 RUN sed -i 's/\r$//' /scripts/*.sh 
 RUN chmod +x /scripts/*.sh
