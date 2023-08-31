@@ -54,7 +54,15 @@
       <Format>application/vnd.ogc.wms_xml</Format>
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.url}}?"/></Get>
+         {{if service.online_resource}}
+            {{if service.online_resource[-1] == '/'}}
+                <Get><OnlineResource xlink:href="{{service.online_resource}}service?"/></Get>
+            {{else}}
+            <Get><OnlineResource xlink:href="{{service.online_resource}}/service?"/></Get>
+            {{endif}}
+          {{else}}
+            <Get><OnlineResource xlink:href="{{service.url}}?"/></Get>
+          {{endif}}
         </HTTP>
       </DCPType>
     </GetCapabilities>
@@ -64,7 +72,15 @@
 {{endfor}}
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.url}}?"/></Get>
+          {{if service.online_resource}}
+            {{if service.online_resource[-1] == '/'}}
+                <Get><OnlineResource xlink:href="{{service.online_resource}}service?"/></Get>
+            {{else}}
+            <Get><OnlineResource xlink:href="{{service.online_resource}}/service?"/></Get>
+            {{endif}}
+          {{else}}
+            <Get><OnlineResource xlink:href="{{service.url}}?"/></Get>
+          {{endif}}
         </HTTP>
       </DCPType>
     </GetMap>
@@ -74,7 +90,15 @@
 {{endfor}}
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.url}}?"/></Get>
+          {{if service.online_resource}}
+            {{if service.online_resource[-1] == '/'}}
+                <Get><OnlineResource xlink:href="{{service.online_resource}}service?"/></Get>
+            {{else}}
+            <Get><OnlineResource xlink:href="{{service.online_resource}}/service?"/></Get>
+            {{endif}}
+          {{else}}
+            <Get><OnlineResource xlink:href="{{service.url}}?"/></Get>
+          {{endif}}
         </HTTP>
       </DCPType>
     </GetFeatureInfo>
@@ -85,7 +109,15 @@
 {{endfor}}
         <DCPType>
             <HTTP>
-                <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.url}}?"/></Get>
+                {{if service.online_resource}}
+            {{if service.online_resource[-1] == '/'}}
+                <Get><OnlineResource xlink:href="{{service.online_resource}}service?"/></Get>
+            {{else}}
+            <Get><OnlineResource xlink:href="{{service.online_resource}}/service?"/></Get>
+            {{endif}}
+          {{else}}
+            <Get><OnlineResource xlink:href="{{service.url}}?"/></Get>
+          {{endif}}
             </HTTP>
         </DCPType>
     </GetLegendGraphic>

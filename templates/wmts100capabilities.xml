@@ -47,7 +47,15 @@
     <ows:Operation name="GetCapabilities">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:href="{{service.url}}?">
+           {{if service.online_resource}}
+            {{if service.online_resource[-1] == '/'}}
+                <ows:Get xlink:href="{{service.online_resource}}service?">
+            {{else}}
+                <ows:Get xlink:href="{{service.online_resource}}/service?">
+            {{endif}}
+          {{else}}
+             <ows:Get xlink:href="{{service.url}}?">
+          {{endif}}
             <ows:Constraint name="GetEncoding">
               <ows:AllowedValues>
                 <ows:Value>KVP</ows:Value>
@@ -60,7 +68,16 @@
     <ows:Operation name="GetTile">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:href="{{service.url}}?">
+        {{if service.online_resource}}
+            {{if service.online_resource[-1] == '/'}}
+                <ows:Get xlink:href="{{service.online_resource}}service?">
+            {{else}}
+                <ows:Get xlink:href="{{service.online_resource}}/service?">
+            {{endif}}
+          {{else}}
+             <ows:Get xlink:href="{{service.url}}?">
+          {{endif}}
+          
             <ows:Constraint name="GetEncoding">
               <ows:AllowedValues>
                 <ows:Value>KVP</ows:Value>
@@ -73,7 +90,15 @@
     <ows:Operation name="GetFeatureInfo">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:href="{{service.url}}?">
+          {{if service.online_resource}}
+            {{if service.online_resource[-1] == '/'}}
+                <ows:Get xlink:href="{{service.online_resource}}service?">
+            {{else}}
+                <ows:Get xlink:href="{{service.online_resource}}/service?">
+            {{endif}}
+          {{else}}
+             <ows:Get xlink:href="{{service.url}}?">
+          {{endif}}
             <ows:Constraint name="GetEncoding">
               <ows:AllowedValues>
                 <ows:Value>KVP</ows:Value>

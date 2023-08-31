@@ -25,7 +25,15 @@
       </Format>
       <DCPType>
         <HTTP>
-          <Get onlineResource="{{service.url}}?"/>
+            {{if service.online_resource}}
+            {{if service.online_resource[-1] == '/'}}
+                <Get onlineResource="{{service.online_resource}}service?"/>
+            {{else}}
+           <Get onlineResource="{{service.online_resource}}/service?"/>
+            {{endif}}
+          {{else}}
+             <Get onlineResource="{{service.url}}?"/>
+          {{endif}}
         </HTTP>
       </DCPType>
     </Capabilities>
@@ -39,7 +47,15 @@
       </Format>
       <DCPType>
         <HTTP>
-          <Get onlineResource="{{service.url}}?"/>
+          {{if service.online_resource}}
+            {{if service.online_resource[-1] == '/'}}
+                <Get onlineResource="{{service.online_resource}}service?"/>
+            {{else}}
+           <Get onlineResource="{{service.online_resource}}/service?"/>
+            {{endif}}
+          {{else}}
+             <Get onlineResource="{{service.url}}?"/>
+          {{endif}}
         </HTTP>
       </DCPType>
     </Map>
@@ -53,7 +69,15 @@
       </Format>
       <DCPType>
         <HTTP>
-          <Get onlineResource="{{service.url}}?"/>
+          {{if service.online_resource}}
+            {{if service.online_resource[-1] == '/'}}
+                <Get onlineResource="{{service.online_resource}}service?"/>
+            {{else}}
+           <Get onlineResource="{{service.online_resource}}/service?"/>
+            {{endif}}
+          {{else}}
+             <Get onlineResource="{{service.url}}?"/>
+          {{endif}}
         </HTTP>
       </DCPType>
     </FeatureInfo>
