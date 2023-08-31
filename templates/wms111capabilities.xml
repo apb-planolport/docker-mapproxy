@@ -56,12 +56,12 @@
         <HTTP>
          {{if service.online_resource}}
             {{if service.online_resource[-1] == '/'}}
-                <Get><OnlineResource xlink:href="{{service.online_resource}}service?"/></Get>
+                <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.online_resource}}service?"/></Get>
             {{else}}
-            <Get><OnlineResource xlink:href="{{service.online_resource}}/service?"/></Get>
+                <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.online_resource}}/service?"/></Get>
             {{endif}}
           {{else}}
-            <Get><OnlineResource xlink:href="{{service.url}}?"/></Get>
+            <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.url}}?"/></Get>
           {{endif}}
         </HTTP>
       </DCPType>
@@ -74,12 +74,12 @@
         <HTTP>
           {{if service.online_resource}}
             {{if service.online_resource[-1] == '/'}}
-                <Get><OnlineResource xlink:href="{{service.online_resource}}service?"/></Get>
+                <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.online_resource}}service?"/></Get>
             {{else}}
-            <Get><OnlineResource xlink:href="{{service.online_resource}}/service?"/></Get>
+            <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.online_resource}}/service?"/></Get>
             {{endif}}
           {{else}}
-            <Get><OnlineResource xlink:href="{{service.url}}?"/></Get>
+            <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.url}}?"/></Get>
           {{endif}}
         </HTTP>
       </DCPType>
@@ -92,12 +92,12 @@
         <HTTP>
           {{if service.online_resource}}
             {{if service.online_resource[-1] == '/'}}
-                <Get><OnlineResource xlink:href="{{service.online_resource}}service?"/></Get>
+                <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.online_resource}}service?"/></Get>
             {{else}}
-            <Get><OnlineResource xlink:href="{{service.online_resource}}/service?"/></Get>
+            <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.online_resource}}/service?"/></Get>
             {{endif}}
           {{else}}
-            <Get><OnlineResource xlink:href="{{service.url}}?"/></Get>
+            <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.url}}?"/></Get>
           {{endif}}
         </HTTP>
       </DCPType>
@@ -111,12 +111,12 @@
             <HTTP>
                 {{if service.online_resource}}
             {{if service.online_resource[-1] == '/'}}
-                <Get><OnlineResource xlink:href="{{service.online_resource}}service?"/></Get>
+                <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.online_resource}}service?"/></Get>
             {{else}}
-            <Get><OnlineResource xlink:href="{{service.online_resource}}/service?"/></Get>
+            <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.online_resource}}/service?"/></Get>
             {{endif}}
           {{else}}
-            <Get><OnlineResource xlink:href="{{service.url}}?"/></Get>
+            <Get><OnlineResource  xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{service.url}}?"/></Get>
           {{endif}}
             </HTTP>
         </DCPType>
